@@ -523,19 +523,23 @@ import javax.swing.JPanel;
                   }
                }
                if(e.getX()>column[column.length-1] && e.getX()<=683){
-                  if(singlePlayer)
-                     playGame(column.length-1);
-                  else{
-                     playGame(column.length-1,turn);
-                     turn=!turn;
+                  if(singlePlayer){
+                	  game = playGame(column.length-1);
+                      xPos = column[column.length-1];
+                      xPos2 = column[connect.moves.get(connect.moves.size()-1).getCol()];
+                      yPos = 0;
+                      yPos2 = 0;
+                   //System.out.println(i);
+                      endingY = row[connect.moves.get(connect.moves.size()-2).getRow()];
+                      endingY2 = row[connect.moves.get(connect.moves.size()-1).getRow()];
                   }
-                  xPos = column[column.length-1];
-                  xPos2 = column[connect.moves.get(connect.moves.size()-1).getCol()];
-                  yPos = 0;
-                  yPos2 = 0;
-               //System.out.println(i);
-                  endingY = row[connect.moves.get(connect.moves.size()-2).getRow()];
-                  endingY2 = row[connect.moves.get(connect.moves.size()-1).getRow()];
+                  else{
+                     game = playGame(column.length-1,turn);
+                     turn=!turn;
+                     xPos = column[column.length-1];
+                     yPos = 0;
+                     endingY = row[connect.moves.get(connect.moves.size()-1).getRow()];
+                  }
                }
                if(game){
             	   animating = true;
