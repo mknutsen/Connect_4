@@ -157,7 +157,7 @@ import javax.swing.JPanel;
             		g.drawImage(pieceHover2,pieces[selectedPieces[1]].startX-4,pieces[selectedPieces[1]].startY-4, this);
             	}
             	for(int i=0;i<pieces.length;i++){
-            		System.out.println(pieces[i].startY);
+            		//System.out.println(pieces[i].startY);
             		g.drawImage(pieces[i].image, pieces[i].startX, pieces[i].startY, this);
             	}
             	if(singlePlayer){
@@ -261,7 +261,7 @@ import javax.swing.JPanel;
                      // System.out.println(yPos);
                      g.drawImage(blue,xPos,yPos,null);
                   }
-                  yPos += 8;
+                  yPos += 12;
                   if (yPos>endingY){
                      animating = false;
                      if(connect.catsCheck()){
@@ -272,7 +272,7 @@ import javax.swing.JPanel;
                    	  // Clip finishing; see comments.
                    	    public void run() {
                    	      try {
-                   	    	  System.out.println("sound");
+                   	    	  //System.out.println("sound");
                    	    	  InputStream in = null;
          		  				try {
          		  					in = new FileInputStream(new File("Connect4Sound.wav"));
@@ -301,7 +301,7 @@ import javax.swing.JPanel;
                         // TODO Auto-generated catch block
                            e.printStackTrace();
                         }
-                     yPos += 8;
+                     yPos += 12;
                      repaint();
                   }
                }
@@ -312,7 +312,6 @@ import javax.swing.JPanel;
                   if(yPos == endingY){
                      g.drawImage(red,xPos2,yPos2,null);
                   }
-                  yPos += 5;
                   if (yPos<endingY){
                      try {
                         Thread.sleep(5);
@@ -321,7 +320,7 @@ import javax.swing.JPanel;
                         // TODO Auto-generated catch block
                            e.printStackTrace();
                         }
-                     yPos += 8;
+                     yPos += 12;
                      repaint();
                   }
                   else if(yPos>=endingY && click){
@@ -790,7 +789,7 @@ import javax.swing.JPanel;
             }
             if(connect.scoreBoard()<-2&&!win){
             	if(goodIdeaCounter == 0){
-            		goodIdeaCounter = 3;
+            		goodIdeaCounter = 5;
 	            	new Thread(new Runnable() {
 	              	  // The wrapper thread is unnecessary, unless it blocks on the
 	              	  // Clip finishing; see comments.
@@ -913,7 +912,7 @@ import javax.swing.JPanel;
          red = r.getImage();
       }
       public void normalizePieces(int x, int y){
-    	  System.out.println(x+" "+y);
+    	  //System.out.println(x+" "+y);
          blue = pieces[x].image;
          red = pieces[y].image;
       }
