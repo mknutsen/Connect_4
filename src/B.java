@@ -204,7 +204,7 @@ import javax.swing.JPanel;
                g.setFont(f);
                g.drawString(undos+" undos left", 5, 14);
             }
-            else if(!win&&devMode && singlePlayer){
+            else if(!win&&devMode){
                g.drawString("Developer Mode", 5, 14);
             }
             Piece temp,temp2;
@@ -548,6 +548,8 @@ import javax.swing.JPanel;
             }
             else if(!win&&e.getButton()==3){
             //System.out.println("undo");
+
+         	   
                if(singlePlayer&&undos>0&&connect.moves.size()>=2){
                   undoing = true;
                   xPos=column[connect.moves.get(connect.moves.size()-1).getCol()];
@@ -582,29 +584,36 @@ import javax.swing.JPanel;
                   	    }
                   	  }).start();
                }
+               else if(devMode){
+         		   connect.undo(connect.moves.get(connect.moves.size()-1));
+         		   turn = !turn;
+         	   }
             }
             else{
-               if(singlePlayer&&undos>1&&connect.moves.size()>=2&&e.getButton()==3){
-            	   undoing = true;
-                  xPos=column[connect.moves.get(connect.moves.size()-1).getCol()];
-                  yPos=row[connect.moves.get(connect.moves.size()-1).getRow()];
-                  if(connect.getWinner()==1){
-	                  xPos2=column[connect.moves.get(connect.moves.size()-2).getCol()];
-	                  yPos2=row[connect.moves.get(connect.moves.size()-2).getRow()];
-	                  endingY=0;
-	                  endingY2=0;
-                	  connect.undo(connect.moves.get(connect.moves.size()-1),connect.moves.get(connect.moves.size()-2));
-                	  undoing = true;
-                  }
-                  else{
-                	  connect.undo(connect.moves.get(connect.moves.size()-1));
-                	  undoing = true;
-                  }
-                  if(!devMode && connect.getWinner()==1){
-                	  undos-=2;	
-                      win = false;
-                      connect.setWinner(0);
-                  }
+               if(undos>1&&connect.moves.size()>=2&&e.getButton()==3){
+            	   
+            	   if(singlePlayer){
+            		   undoing = true;
+	                  xPos=column[connect.moves.get(connect.moves.size()-1).getCol()];
+	                  yPos=row[connect.moves.get(connect.moves.size()-1).getRow()];
+	                  if(connect.getWinner()==1){
+		                  xPos2=column[connect.moves.get(connect.moves.size()-2).getCol()];
+		                  yPos2=row[connect.moves.get(connect.moves.size()-2).getRow()];
+		                  endingY=0;
+		                  endingY2=0;
+	                	  connect.undo(connect.moves.get(connect.moves.size()-1),connect.moves.get(connect.moves.size()-2));
+	                	  undoing = true;
+	                  }
+	                  else{
+	                	  connect.undo(connect.moves.get(connect.moves.size()-1));
+	                	  undoing = true;
+	                  }
+	                  if(!devMode && connect.getWinner()==1){
+	                	  undos-=2;	
+	                      win = false;
+	                      connect.setWinner(0);
+	                  }
+            	  }
                }
                else if(e.getX() >= 245 && e.getX() <= 424 && e.getY()<= 100 && e.getY() >= 0 ){
                   win = false;
