@@ -126,6 +126,7 @@ import javax.swing.JPanel;
 					Font f = new Font("TimesRoman",Font.BOLD,14);
 	                g.setFont(f);
 	                g.drawString("REMY BUSTANI MADE ALL OF THIS GAME LOOK PRETTY AND HE IS ALSO KIND OF PRETTY", 40,300);
+	                g.drawString("LOGAN CUNNINGHAM WAS THE VOICE IN THE GAME AND MADE IT SOUND SUPER BADASS", 44,350);
 		            g.drawImage(mainMenuHelp.image,mainMenuHelp.startX,mainMenuHelp.startY,this);
 				}
 				else if(showHelp){
