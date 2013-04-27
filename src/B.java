@@ -69,7 +69,7 @@ import javax.swing.JPanel;
          ImageIcon x = new ImageIcon(this.getClass().getResource("Darts_Banner AI Win Mouse Over.png"));
          ImageIcon help = new ImageIcon(this.getClass().getResource("helpScreen.png"));
          ImageIcon sdaiofh = new ImageIcon(this.getClass().getResource("menuWelcome.png"));
-         ImageIcon wel = new ImageIcon(this.getClass().getResource("welcome3.png"));
+         ImageIcon wel = new ImageIcon(this.getClass().getResource("welcome4.png"));
          ImageIcon zz = new ImageIcon(this.getClass().getResource("mainMenu3.png"));
          setUpPieces();
          homescreenCoverUp = sdaiofh.getImage();
