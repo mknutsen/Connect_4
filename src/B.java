@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 
    @SuppressWarnings("serial")
    public class B extends JPanel implements MouseListener, MouseMotionListener, KeyListener{
-      Image board,red,blue,highlighter, welcomeScreen,dev,pieceHover,pieceHover2,helpScreen,homescreenCoverUp;
+      Image board,red,blue,highlighter, welcomeScreen,dev,pieceHover,pieceHover2,helpScreen,homescreenCoverUp,creditsOverlay;
       Board connect;
       int undos;
       int[] selectedPieces;
@@ -50,7 +50,7 @@ import javax.swing.JPanel;
       final int[] column={11, 109, 208, 307, 405, 505, 604};
       final int[] row={575, 476, 379, 281, 183, 84};
       boolean choosePieces = false;
-      Button done,regularButton,twoPlayer,mainMenu,winScreen,hover,mainMenu2,shayannButton,credits,halp, mainMenuHelp;
+      Button done,regularButton,twoPlayer,mainMenu,winScreen,hover,mainMenu2,shayannButton,credits,halp, mainMenuHelp, signature;
       boolean showHelp = false;
    
      
@@ -101,6 +101,8 @@ import javax.swing.JPanel;
          mainMenuHelp = new Button(250, 550, 200, 100, b.getImage());
          b = new ImageIcon(this.getClass().getResource("Shayann.png"));
          shayannButton = new Button(600,0,88,88,b.getImage());
+         b = new ImageIcon(this.getClass().getResource("overlay.png"));
+         creditsOverlay = b.getImage();
       }
       private void setUpPieces() {
 		ImageIcon a;
@@ -123,11 +125,12 @@ import javax.swing.JPanel;
 			if(!choosePieces){
 				if(showCredits){
 					g.drawImage(homescreenCoverUp,0,0,this);
-					Font f = new Font("TimesRoman",Font.BOLD,14);
+					g.drawImage(creditsOverlay,0,0,this);
+					/*Font f = new Font("TimesRoman",Font.BOLD,14);
 	                g.setFont(f);
 	                g.drawString("REMY BUSTANI MADE ALL OF THIS GAME LOOK PRETTY AND HE IS ALSO KIND OF PRETTY", 40,300);
 	                g.drawString("LOGAN CUNNINGHAM WAS THE VOICE IN THE GAME AND MADE IT SOUND SUPER BADASS", 44,350);
-		            g.drawImage(mainMenuHelp.image,mainMenuHelp.startX,mainMenuHelp.startY,this);
+		            g.drawImage(mainMenuHelp.image,mainMenuHelp.startX,mainMenuHelp.startY,this);*/
 				}
 				else if(showHelp){
 					g.drawImage(homescreenCoverUp,0,0,this);
