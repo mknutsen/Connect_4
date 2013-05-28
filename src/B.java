@@ -126,11 +126,11 @@ import javax.swing.JPanel;
 				if(showCredits){
 					g.drawImage(homescreenCoverUp,0,0,this);
 					g.drawImage(creditsOverlay,0,0,this);
+		            g.drawImage(mainMenuHelp.image,mainMenuHelp.startX,mainMenuHelp.startY,this);
 					/*Font f = new Font("TimesRoman",Font.BOLD,14);
 	                g.setFont(f);
 	                g.drawString("REMY BUSTANI MADE ALL OF THIS GAME LOOK PRETTY AND HE IS ALSO KIND OF PRETTY", 40,300);
-	                g.drawString("LOGAN CUNNINGHAM WAS THE VOICE IN THE GAME AND MADE IT SOUND SUPER BADASS", 44,350);
-		            g.drawImage(mainMenuHelp.image,mainMenuHelp.startX,mainMenuHelp.startY,this);*/
+	                g.drawString("LOGAN CUNNINGHAM WAS THE VOICE IN THE GAME AND MADE IT SOUND SUPER BADASS", 44,350);*/
 				}
 				else if(showHelp){
 					g.drawImage(homescreenCoverUp,0,0,this);
