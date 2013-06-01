@@ -4,8 +4,8 @@ public class BoardScore {
 	ArrayList<SmallBoard> vertical;
 	ArrayList<SmallBoard> horizontal;
 	ArrayList<SmallBoard> diagonal;
-	private final int four =9000;
-	private final int three = 7;
+	private final int four =100000;
+	private final int three = 50;
 	private final int two = 1;
 	public BoardScore(int color){
 		vertical = new ArrayList<SmallBoard>();
