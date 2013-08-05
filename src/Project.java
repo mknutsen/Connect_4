@@ -4,15 +4,20 @@ import java.util.Scanner;
 public class Project {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String name1,name2;
-		System.out.println("What is your name, player one?");
 		Scanner scan = new Scanner(System.in);
-		name1 = scan.nextLine();
+		String name1,name2;
+		int row, column;
+		System.out.println("rows?");
+		row = scan.nextInt();
+		System.out.println("columns?");
+		column = scan.nextInt();
+		System.out.println("What is your name, player one?");
+		name1 = scan.next();
 		System.out.println("and yours, player 2?");
-		name2 = scan.nextLine();
+		name2 = scan.next();
 		Board x = new Board();
 		System.out.println("Alright "+name1+" and "+name2+"\nYou may quit at any time by pressing q\nGood Luck!");
-		while(!x.playMove(name1,name2)){
+		while(!x.playMove(name1,name2, row, column)){
 			
 		}
 		scan.close();

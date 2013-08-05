@@ -9,8 +9,8 @@ public class Board {
 	private NodeTree x;
 	private int winner;
 	public int total=0;
-	private final int row = 6;
-	private final int col = 7;
+	private int row = 6;
+	private int col = 7;
 	public ArrayList<Piece> moves;
 	Piece[][] board;
 	public Board(){
@@ -52,7 +52,7 @@ public class Board {
 		}
 		return false;
 	}
-	public boolean playMove(String name1, String name2){
+	public boolean playMove(String name1, String name2, int row2, int column){
 		printBoard();
 		System.out.println(name1+". your turn.");
 		String string = scan.nextLine();
