@@ -52,24 +52,66 @@ public class Board {
 		}
 		return false;
 	}
-	public boolean playMove(){
+	public boolean playMove(String name1, String name2){
 		printBoard();
-		System.out.println("Currrent score: "+scoreBoard());
-		int move = scan.nextInt();
-		if(move == -1) return true;
+		System.out.println(name1+". your turn.");
+		String string = scan.nextLine();
+		if(string.equalsIgnoreCase("q")){
+			System.out.println("BYE");
+			return true;
+		}
+		while(tryParse(string)==null){
+			System.out.println("Sorry, that wasn't a number or q\nplease type in another number!");
+			string = scan.nextLine();
+			if(string.equalsIgnoreCase("q")){
+				System.out.println("BYE");
+				return true;
+			}
+		}
+		int move = (int)tryParse(string);
+		while(move<0||move>6){
+			System.out.println("Sorry, that wasn't a column number\nPlease enter another number!");
+			string = scan.nextLine();
+			if(string.equalsIgnoreCase("q")){
+				System.out.println("BYE");
+				return true;
+			}
+			while(tryParse(string)==null){
+				System.out.println("Sorry, that wasn't a number or q\nplease type in another number!");
+				string = scan.nextLine();
+				if(string.equalsIgnoreCase("q")){
+					System.out.println("BYE");
+					return true;
+				}
+			}
+		}
 		while (!dropPiece(-1,move)) move = scan.nextInt();
 		printBoard();
 		
 		if(scoreBoard()<-400){
-			System.out.println("Blue wins!");//                                                             REMEMBER TO PUT THIS BACK
+			System.out.println(name1+" wins!");//                                                             REMEMBER TO PUT THIS BACK
 			return true;
 		}
-		System.out.println("Currrent score: "+scoreBoard());
-		move = scan.nextInt();
-		if(move == -1) return true;
+		System.out.println(name2+", your turn");
+		string = scan.nextLine();
+		if(string.equalsIgnoreCase("q"))
+			return true;
+		while(tryParse(string)==null){
+			System.out.println("Sorry, that wasn't a number or q\nplease type in another number!");
+			string = scan.nextLine();
+		}
+		move = (int)tryParse(string);
+		while(move<0||move>6){
+			System.out.println("Sorry, that wasn't a column number\nPlease enter another number!");
+			string = scan.nextLine();
+			while(tryParse(string)==null){
+				System.out.println("Sorry, that wasn't a number or q\nplease type in another number!");
+				string = scan.nextLine();
+			}
+		}
 		while (!dropPiece(1,move)) move = scan.nextInt();
 		if(scoreBoard()>400){
-			System.out.println("Red wins!");//                                                             REMEMBER TO PUT THIS BACK
+			System.out.println(name2+" wins!");//                                                             REMEMBER TO PUT THIS BACK
 			printBoard();
 			return true;
 		}
@@ -239,5 +281,12 @@ public class Board {
 	public void setWinner(int i) {
 		winner = i;
 		
+	}
+	public static Integer tryParse(String text) {
+	  try {
+	    return new Integer(text);
+	  } catch (NumberFormatException e) {
+	    return null;
+	  }
 	}
 }

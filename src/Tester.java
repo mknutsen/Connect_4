@@ -9,7 +9,7 @@ public class Tester {
 		Scanner scan = new Scanner(System.in);
 		String p = scan.nextLine();
 		if(p.equals("")){
-			while(!x.playMove());
+			//while(!x.playMove());
 		}
 		else{
 			System.out.println("Pick a difficulty between 1 and 5\n(Note that difficulties above 3 take some time to pick a move)");
