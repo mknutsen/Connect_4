@@ -15,7 +15,7 @@ public class NodeTree {
 			temp.setBoard(root.getBoard());
 			temp.dropPiece(1,i);
 			if(temp.scoreBoard()>1000){
-				System.out.println("I'm gonne win: "+i);
+				//System.out.println("I'm gonne win: "+i);
 				return i;
 			}
 		}

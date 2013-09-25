@@ -1,7 +1,8 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Board {
 	private Scanner scan = new Scanner(System.in);
 	private BoardScore redScorer;
