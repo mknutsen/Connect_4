@@ -19,7 +19,7 @@ public class NodeTree {
 				return i;
 			}
 		}
-		///*manually check if the opponent can win nmext turn and go there to block it
+		///*manually check if the opponent can win next turn and go there to block it
 		for(int i=0;i<7;i++){
 			temp.setBoard(root.getBoard());
 			temp.dropPiece(-1,i);
