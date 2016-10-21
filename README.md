@@ -3,4 +3,5 @@ A few years ago, I was taking a self-led class. Over the course of the year, I w
 
 ## Watch me play it or try it for yourself!
 https://youtu.be/QrpilHJsj74
+
 http://www.maxknutsen.com/images/ConnectFourAIMaxKnutsen.jar
