@@ -1,10 +1,5 @@
-AUTHOR - Max Knutsen <mknutse1@umbc.edu>
-Version - FINAL
+# Connect 4
+A few years ago, I was taking a self-led class. Over the course of the year, I was to develop one application that I was proud of to present to the class. The result was a computer that plays Connect Four. Using a data structure that I based on the minimax theorem, the computer could look a certain number (user defined) of moves into the future. Using its knowledge of the future, it determined the best move by deciding which move is most likely to lead to the desired board position. When deciding, it takes into account the best moves for itself, as well as the best moves for its opponent. The end result is a computer that's pretty hard to beat!
 
-This graphical interpritation of Connect 4 uses the Minimax algorithm to search through 3 layers of potential moves
-The end goal of the algorithm is to minimize the negative impact of the worst case scenario
-Graphics were provided by Remy Bustani
-Audio is Logan Cunningham's character in Bastion
-
-Please note that this code sucks. It might get the job done, but this project is a cluttered mess.
-Especially the jFrame file; I don't even understand what that code does.
+## Watch me play it!
+https://youtu.be/QrpilHJsj74
