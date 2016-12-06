@@ -4,3 +4,5 @@ In high school, I was taking a self-led class. Over the course of the year, I wa
 ## Watch me play it or try it for yourself!
 [Video](https://youtu.be/QrpilHJsj74) and
 [JAR](https://github.com/mknutsen/Connect_4/releases/download/v1.0/ConnectFourAIMaxKnutsen.jar)
+
+## [Remy Bustani](http://remybustani.com) did all the art and he's awesome
